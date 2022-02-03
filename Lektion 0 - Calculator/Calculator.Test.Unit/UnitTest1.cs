@@ -1,3 +1,5 @@
+using System;
+using NuGet.Frameworks;
 using NUnit.Framework;
 
 namespace Calculator.Test.Unit
@@ -31,6 +33,21 @@ namespace Calculator.Test.Unit
         {
             // ACT and ASSERT 
             Assert.That(uut.Subtract(5, 5), Is.EqualTo(0));
+        }
+
+        [Test]
+        public void Divide_FiveDividedByFive_Res1()
+        {
+            // ACT and ASSERT 
+            Assert.That(uut.Divide(5, 5), Is.EqualTo(1));
+        }
+
+        [Test]
+        public void Divide_DivideByZero_ExceptionThrown()
+        {
+            // ACT and ASSERT 
+            Assert.That(() => uut.Divide(5, 0), Throws.TypeOf<DivideByZeroException>());
+
         }
     }
 }
