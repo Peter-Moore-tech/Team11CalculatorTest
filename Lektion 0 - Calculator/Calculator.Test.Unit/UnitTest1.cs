@@ -25,5 +25,12 @@ namespace Calculator.Test.Unit
             // ACT and ASSERT 
             Assert.That(uut.Multiply(-2, 3), Is.EqualTo(-6));
         }
+
+        [Test]
+        public void Calculator_Subtract_FiveMinusFive_Res0()
+        {
+            // ACT and ASSERT 
+            Assert.That(uut.Subtract(5, 5), Is.EqualTo(0));
+        }
     }
 }
