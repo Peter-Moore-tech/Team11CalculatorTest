@@ -15,6 +15,55 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
+        public void Accumulator_MultiplyfiveTimesFive_Accumulator25()
+        {
+            //arrange
+
+            //act
+            uut.Multiply(5, 5);
+            //assert
+            Assert.That(uut.Accumulator, Is.EqualTo(25));
+
+        }
+        [Test]
+        public void Accumulator_MultiplyfiveTimesFiveThenAddFivePlusFive_Accumulator10()
+        {
+            //arrange
+
+            //act
+            uut.Multiply(5, 5);
+            uut.Add(5, 5);
+            //assert
+            Assert.That(uut.Accumulator, Is.EqualTo(10));
+
+        }
+
+        [Test]
+        public void InitialAccumulator_NoAct_Accumulator0()
+        {
+            //arrange
+
+            //act
+            
+            //assert
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
+
+        }
+
+        [Test]
+        public void ClearAccumulator_MultiplyfiveTimesFiveThenClearAccumulator_Accumulator0()
+        {
+            //arrange
+
+            //act
+            uut.Multiply(5, 5);
+            uut.Clear();
+            //assert
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
+
+        }
+
+        [Test]
         public void Calculator_AddTwoPositiveIntegers_IntegersAdded()
         {
             // ASSERT 
@@ -33,6 +82,17 @@ namespace Calculator.Test.Unit
         {
             // ACT and ASSERT 
             Assert.That(uut.Subtract(5, 5), Is.EqualTo(0));
+        }
+        [Test]
+        public void Power_fiveToThePowerOfFive_Res3125()
+        {
+            //arrange
+
+            //act
+
+            //assert
+            Assert.That(uut.Power(5, 5), Is.EqualTo(3125));
+
         }
 
         [Test]
