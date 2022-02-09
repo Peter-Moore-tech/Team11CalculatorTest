@@ -15,6 +15,128 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
+        public void OverloadAdd_Accumulator0Add5_Accumulator5()
+        {
+            //arrange
+
+            //act
+            uut.Add(5);
+            //assert
+            Assert.That(uut.Accumulator, Is.EqualTo(5));
+
+        }
+
+        [Test]
+        public void OverloadAdd_Accumulator10Add5_Accumulator15()
+        {
+            //arrange
+            uut.Add(5, 5);
+            //act
+            uut.Add(5);
+            //assert
+            Assert.That(uut.Accumulator, Is.EqualTo(15));
+
+        }
+
+        [Test]
+        public void OverloadSubtract_Accumulator0Subtract5_AccumulatorMinus5()
+        {
+            //arrange
+
+            //act
+            uut.Subtract(5);
+            //assert
+            Assert.That(uut.Accumulator, Is.EqualTo(-5));
+        }
+
+        [Test]
+        public void OverloadSubtract_Accumulator10Subtract5_Accumulator5()
+        {
+            //arrange
+            uut.Add(5, 5);
+            //act
+            uut.Subtract(5);
+            //assert
+            Assert.That(uut.Accumulator, Is.EqualTo(5));
+        }
+
+        [Test]
+        public void OverloadMultiply_Accumulator0Multiply5_Accumulator0()
+        {
+            //arrange
+
+            //act
+            uut.Multiply(5);
+            //assert
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void OverloadMultiply_Accumulator5Multiply5_Accumulator25()
+        {
+            //arrange
+            uut.Add(5);
+            //act
+            uut.Multiply(5);
+            //assert
+            Assert.That(uut.Accumulator, Is.EqualTo(25));
+        }
+
+        [Test]
+        public void OverloadPower_Accumulator0Power5_Accumulator0()
+        {
+            //arrange
+
+            //act
+            uut.Power(5);
+            //assert
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void OverloadDevide_Accumulator5Devide0_ExceptionThrown()
+        {
+            //arrange
+            uut.Add(5);
+            //act
+            //assert
+            Assert.That(() => uut.Divide(0), Throws.TypeOf<DivideByZeroException>());
+        }
+
+        [Test]
+        public void OverloadDevide_Accumulator0Devide5_Accumulator0()
+        {
+            //arrange
+            
+            //act
+            uut.Divide(5);
+            //assert
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void OverloadDevide_Accumulator25Devide5_Accumulator5()
+        {
+            //arrange
+            uut.Add(25);
+            //act
+            uut.Divide(5);
+            //assert
+            Assert.That(uut.Accumulator, Is.EqualTo(5));
+        }
+
+        [Test]
+        public void OverloadPower_Accumulator5Power2_Accumulator25()
+        {
+            //arrange
+
+            //act
+            uut.Power(2);
+            //assert
+            Assert.That(uut.Accumulator, Is.EqualTo(25));
+        }
+
+        [Test]
         public void Accumulator_MultiplyfiveTimesFive_Accumulator25()
         {
             //arrange
@@ -62,6 +184,7 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Accumulator, Is.EqualTo(0));
 
         }
+
 
         [Test]
         public void Add_TwoPositiveIntegers_IntegersAdded()
