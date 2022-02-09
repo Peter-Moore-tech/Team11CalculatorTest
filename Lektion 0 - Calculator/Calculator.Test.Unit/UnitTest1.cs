@@ -129,7 +129,7 @@ namespace Calculator.Test.Unit
         public void OverloadPower_Accumulator5Power2_Accumulator25()
         {
             //arrange
-
+            uut.Add(5);
             //act
             uut.Power(2);
             //assert
@@ -210,16 +210,17 @@ namespace Calculator.Test.Unit
         [TestCase(2,0,1)]
         [TestCase(-1, 2, 1)]
         [TestCase(-1, 3, -1)]
-        [TestCase(-1, 3, -1)]
+        [TestCase(0, 1, 0)]
+        [TestCase(5, -1, 0.2)]
 
-        public void Power_SeveralTestCases(int a, int b, int c)
+        public void Power_SeveralTestCases(double a, double b, double result)
         {
             //arrange
 
             //act
 
             //assert
-            Assert.That(uut.Power(a, b), Is.EqualTo(c));
+            Assert.That(uut.Power(a, b), Is.EqualTo(result));
 
         }
 
