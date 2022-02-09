@@ -129,7 +129,7 @@ namespace Calculator.Test.Unit
         public void OverloadPower_Accumulator5Power2_Accumulator25()
         {
             //arrange
-
+            uut.Add(5);
             //act
             uut.Power(2);
             //assert
