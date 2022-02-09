@@ -64,25 +64,42 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void Calculator_AddTwoPositiveIntegers_IntegersAdded()
+        public void Add_TwoPositiveIntegers_IntegersAdded()
         {
             // ASSERT 
             Assert.That(uut.Add(2,3),Is.EqualTo(5));
         }
 
         [Test]
-        public void Calculator_MultiplyPosiviteAndNegativeInteger_IntegersMultiplied()
+        public void Multiply_PosiviteAndNegativeInteger_IntegersMultiplied()
         {
             // ACT and ASSERT 
             Assert.That(uut.Multiply(-2, 3), Is.EqualTo(-6));
         }
 
         [Test]
-        public void Calculator_Subtract_FiveMinusFive_Res0()
+        public void Subtract_FiveMinusFive_Res0()
         {
             // ACT and ASSERT 
             Assert.That(uut.Subtract(5, 5), Is.EqualTo(0));
         }
+
+        [TestCase(2,0,1)]
+        [TestCase(-1, 2, 1)]
+        [TestCase(-1, 3, -1)]
+        [TestCase(-1, 3, -1)]
+
+        public void Power_SeveralTestCases(int a, int b, int c)
+        {
+            //arrange
+
+            //act
+
+            //assert
+            Assert.That(uut.Power(a, b), Is.EqualTo(c));
+
+        }
+
         [Test]
         public void Power_fiveToThePowerOfFive_Res3125()
         {
