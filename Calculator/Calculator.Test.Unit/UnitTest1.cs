@@ -234,12 +234,12 @@ namespace Calculator.Test.Unit
 
 
         [Test]
-        public void Add_TwoPlusThree_Accumulator5()
+        public void Add_TwoPlusFour_Accumulator6()
         {
             //Act
-            uut.Add(2, 3);
+            uut.Add(2, 4);
             // ASSERT 
-            Assert.That(uut.Accumulator,Is.EqualTo(5));
+            Assert.That(uut.Accumulator,Is.EqualTo(6));
         }
 
         [Test]
