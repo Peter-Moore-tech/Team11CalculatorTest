@@ -68,7 +68,7 @@ namespace MyCalculator
                 throw new DivideByZeroException();
             }
 
-            return dividend / divisor;
+            return Accumulator=dividend / divisor;
             
         }
     }
